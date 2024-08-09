@@ -2,7 +2,7 @@
 
 .services-section{
     background: url(https://mobirise.com/extensions/floram4/floral-studio/assets/images/background2.jpg) center/cover;
-    padding: 60px 0;
+    padding: 100px 0;
 }
 /* font-family: "Quicksand", sans-serif; */
 
@@ -13,9 +13,15 @@
 font: 400 22px/1.5 "Quicksand", sans-serif;
 color: #1b745e;
 font-style: italic;
+margin-bottom: 12px;
 }
 .services-head-content p{
     font: 400 36.8px "Quicksand", sans-serif;
+    color: #0c5b47;
+    margin: 0 0  50px;
+}
+.mission{
+    margin: 80px 0;
 }
 .mission-img img{
     width: 100%;
@@ -51,6 +57,31 @@ margin: 0 0 20px;
     background-color: #c4d5c0 !important;
     border-color: #c4d5c0 !important;
 }
+.category-card-wrapper svg{
+    font-size: 40px;
+    fill: #0c5b47;
+    margin-right: 15px;
+}
+.category-card-wrapper span{
+    font: 400 30px "Quicksand", sans-serif;
+    color: #1b745e;
+    text-transform: capitalize;
+}
+.category-card-wrapper .icon-content{
+    display: flex;
+    align-items: center;
+    margin-bottom: 12px;
+}
+.category-card-wrapper p{
+    font: 400 16px "Quicksand", sans-serif;
+    color: #1b745e;
+}
+/* .services-slider .swiper-slide{
+    padding: 0 20px !important;
+} */
+.services-slider .swiper-slide img{
+    width: 100% !important;
+}
 @media(min-width: 768px){
     .mission-content h5{
         font-size: 40px;
@@ -59,15 +90,34 @@ margin: 0 0 20px;
         display: flex;
         flex-direction: row-reverse;
     }
+    .mission-img{
+        width: 50%;
+    }
     .mission-content{
+        width: 50%;
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: start;
     }
+    .category-cards{
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        gap: 40px;
+    }
+    .category-card-wrapper{
+        padding: 20px 0;
+    }
 }
 @media(min-width: 992px){
     .services-head-content p{
         font-size: 48px;
+    }
+    .mission-content{
+        padding: 0 150px;
+        
+    }
+    .category-cards{
+        grid-template-columns: repeat(4,1fr);
     }
 }
