@@ -1,9 +1,11 @@
 import React, { useState } from "react";
 import { useFormik } from "formik";
 import { basicSchema } from "../../schema";
+import { useCreateProductMutation } from "../../redux/ProductsApi/productsApi";
 
 function Admin() {
-    const [productList, setProductList] = useState([]);
+
+    const [addProduct] = useCreateProductMutation()
   const { values, handleChange, handleSubmit, errors, touched, resetForm } =
     useFormik({
       initialValues: {
@@ -15,23 +17,8 @@ function Admin() {
       validateOnChange: true,
       validateOnBlur: false,
       onSubmit: (values) => {
-        // fetch("http://localhost:4000/flowers/", {
-        //   method: "POST",
-        //   headers: {
-        //     "Content-Type": "application/json",
-        //   },
-        //   body: JSON.stringify(values),
-        // })
-        //   .then((response) => response.json())
-        //   .then((data) => {
-        //     console.log("Success:", data);
-        //     setProductList([...productList, data]);
-        //     resetForm();
-        //   })
-        //   .catch((error) => {
-        //     console.error("Error:", error);
-        //   });
-        console.log("okkkk");
+        addProduct(...values)
+       
       },
     });
   return (
@@ -51,6 +38,7 @@ function Admin() {
               type="text"
               className="form-control"
               id="urlInput"
+              name="image"
               aria-describedby="textHelp"
               value={values.urlInput}
               onChange={handleChange}
@@ -68,6 +56,7 @@ function Admin() {
                 type="text"
                 className="form-control"
                 id="titleInput"
+                name="name"
                 value={values.titleInput}
                 onChange={handleChange}
               />
@@ -83,6 +72,7 @@ function Admin() {
                 type="text"
                 className="form-control"
                 id="priceInput"
+                name="price"
                 value={values.priceInput}
                 onChange={handleChange}
               />
