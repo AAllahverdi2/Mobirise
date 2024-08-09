@@ -1,19 +1,15 @@
-import Find from "../../components/Find"
-import Message from "../../components/Message"
-import OurClient from "../../components/OurClient"
-import OurTeam from "../../components/OurTeam/OurTeam"
-import Services from "../../components/Services"
+import Services from "../../components/Services";
+import OurTeam from "../../components/OurTeam/OurTeam";
+import Banner from "../../components/Banner";
 
 const Home = () => {
   return (
     <div>
-      <Services/>
-      <OurTeam/>
-      <Message/>
-      <OurClient/>
-      <Find/>
+      <Banner />
+      <Services />
+      <OurTeam />
     </div>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;
