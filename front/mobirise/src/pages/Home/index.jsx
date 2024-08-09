@@ -1,9 +1,9 @@
-import OurTeam from "../../components/OurTeam/OurTeam"
+import Services from "../../components/Services"
 
 const Home = () => {
   return (
     <div>
-
+      <Services/>
     </div>
   )
 }
