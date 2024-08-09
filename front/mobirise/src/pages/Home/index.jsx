@@ -1,11 +1,15 @@
-import Services from "../../components/Services"
+import Services from "../../components/Services";
+import OurTeam from "../../components/OurTeam/OurTeam";
+import Banner from "../../components/Banner";
 
 const Home = () => {
   return (
     <div>
-      <Services/>
+      <Banner />
+      <Services />
+      <OurTeam />
     </div>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;
