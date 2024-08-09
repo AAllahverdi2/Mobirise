@@ -1,0 +1,28 @@
+.message__all{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    margin-top: 30px;
+}
+.right__side{
+    width: 500px;
+    font-size: 15px;
+}
+.left__side{
+    h1{
+        color: #0c5b47;
+    }
+}
+
+@media only screen and (max-width: 750px) {
+   .message__all{
+    display: flex;
+    flex-direction: column;
+   }
+  }
+  @media only screen and (max-width: 500px) {
+   .right__side{
+    width: 300px;
+   }
+   }

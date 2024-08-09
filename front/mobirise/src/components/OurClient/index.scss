@@ -1,0 +1,40 @@
+.client__all{
+    background-color: #e0ecdc;
+    min-height: 450px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    flex-direction: column;
+    h1{
+        font-size: 33px;
+        margin-top: 20px;
+    }
+   
+}
+
+.top{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    img{
+        width: 150px;
+    }
+    
+}
+
+.top__top{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 80px ;
+}
+
+.top__bottom{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 80px ;
+}
