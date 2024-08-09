@@ -1,9 +1,11 @@
-import React, { useState } from "react";
 import { useFormik } from "formik";
 import { basicSchema } from "../../schema";
+import { useCreateProductMutation, useDeleteProductMutation, useGetAllProductsQuery } from "../../redux/productsApi/productsApi";
 
 function Admin() {
-    const [productList, setProductList] = useState([]);
+  const [addProduct] = useCreateProductMutation();
+  const [deleteProduct] = useDeleteProductMutation();
+  const {data: products, isLoading, isError} = useGetAllProductsQuery();
   const { values, handleChange, handleSubmit, errors, touched, resetForm } =
     useFormik({
       initialValues: {
@@ -15,23 +17,12 @@ function Admin() {
       validateOnChange: true,
       validateOnBlur: false,
       onSubmit: (values) => {
-        // fetch("http://localhost:4000/flowers/", {
-        //   method: "POST",
-        //   headers: {
-        //     "Content-Type": "application/json",
-        //   },
-        //   body: JSON.stringify(values),
-        // })
-        //   .then((response) => response.json())
-        //   .then((data) => {
-        //     console.log("Success:", data);
-        //     setProductList([...productList, data]);
-        //     resetForm();
-        //   })
-        //   .catch((error) => {
-        //     console.error("Error:", error);
-        //   });
-        console.log("okkkk");
+        addProduct({
+          image: values.urlInput,
+          name: values.titleInput,
+          price: values.priceInput,
+        });
+        resetForm();
       },
     });
   return (
@@ -71,9 +62,9 @@ function Admin() {
                 value={values.titleInput}
                 onChange={handleChange}
               />
-            {errors.titleInput && touched.titleInput && (
-              <p className="text-danger fs-4">{errors.titleInput}</p>
-            )}
+              {errors.titleInput && touched.titleInput && (
+                <p className="text-danger fs-4">{errors.titleInput}</p>
+              )}
             </div>
             <div className="mb-3 w-50">
               <label htmlFor="priceInput" className="form-label fs-4">
@@ -96,6 +87,29 @@ function Admin() {
             Submit
           </button>
         </form>
+        <table className="table table-bordered table-striped mt-5">
+          <tr>
+            <th>Image</th>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Actions</th>
+          </tr>
+          {
+            products && products.map((product, index) => (
+              <tr key={index}>
+                <td>
+                  <img src={product.image} alt={product.name} style={{width: '80px'}}/>
+                </td>
+                <td style={{fontSize: '20px'}}>{product.name}</td>
+                <td style={{fontSize: '20px'}}>{product.price}</td>
+                <td>
+                  <button className="btn btn-warning">Edit</button>
+                  <button className="btn btn-danger" onClick={()=>deleteProduct(product._id)}>Delete</button>
+                </td>
+              </tr>
+            ))
+          }
+        </table>
       </div>
     </div>
   );
