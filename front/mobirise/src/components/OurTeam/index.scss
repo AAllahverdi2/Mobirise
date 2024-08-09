@@ -1,0 +1,46 @@
+.ourteam__all {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.card {
+    border: none !important;
+}
+
+.ourteam__name {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: green;
+flex-direction: column;
+    p{
+        font-size: 17px;
+        color: #0c5b47;
+        font-weight: lighter;
+    }
+    h1 {
+        font-size: 30px !important;
+
+    }
+}
+
+.card-body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    h5 {
+        font-size: 20px;
+        color: #0c5b47;
+    }
+
+    p {
+        font-size: 15px;
+        font-weight: lighter;
+        color: darkgray;
+    }
+}

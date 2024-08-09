@@ -1,7 +1,10 @@
+import OurTeam from "../../components/OurTeam/OurTeam"
 
 const Home = () => {
   return (
-    <div>Home</div>
+    <div>
+
+    </div>
   )
 }
 
