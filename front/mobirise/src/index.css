@@ -9,10 +9,10 @@ html {
   font-size: 10px;
 }
 body {
-  font-family: 'Poppins', sans-serif;
+  font-family: "Quicksand", sans-serif !important;
   margin: 0;
   padding: 0;
-  background-color: #f5f5f5;
+  background-color: #ffffff;
 }
 ul {
   list-style-type: none;
@@ -42,7 +42,7 @@ p {
 }
 
 a {
-  text-decoration: none;
+  text-decoration: none !important;
   display: inline-block;
   color: #121212;
 }
@@ -70,10 +70,11 @@ select {
   outline: 0;
 }
 @media screen and (max-width: 768px) {
-  html,body {
+  html,
+  body {
     overflow-x: hidden;
   }
   .container {
     padding: 0 2rem;
-  } 
+  }
 }
