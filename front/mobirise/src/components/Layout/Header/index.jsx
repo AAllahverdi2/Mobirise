@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import './index.scss'
 
 
@@ -32,14 +33,10 @@ const Header = () => {
                     </a>
                 </li>
                 <li>
-                    <a href="">
-                        Pricing
-                    </a>
+                   <Link to="/wishList">wishList</Link>
                 </li>
                 <li>
-                    <a href="">
-                        Contacts
-                    </a>
+                   <Link to="/basket">Basket</Link>
                 </li>
             </ul>
         </div>
